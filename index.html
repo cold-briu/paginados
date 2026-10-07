@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>María Guadalupe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
+
+        :root {
+            --bg-color: #FAFAF5; /* Crema muy claro/arena */
+            --text-color: #2F3E35; /* Verde bosque profundo para el texto */
+            --accent-color: #A3B899; /* Verde hoja suave */
+            --accent-hover: #8A9D80;
+            --section-bg: #F0EBE1; /* Tierra/arcilla aún más suave y limpio */
+            --font-headings: 'Playfair Display', serif; /* Estilo botánico y elegante */
+            --font-main: 'Plus Jakarta Sans', sans-serif; /* Fuente moderna, geométrica y limpia */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 120px 0; /* Más espacio en blanco (aire), estilo moderno */
+        }
+
+        h1, h2 {
+            font-family: var(--font-headings);
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: #1A261D;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem); /* Tipografía fluida grande e impactante */
+            letter-spacing: -0.02em; /* Espaciado moderno */
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+            color: #4A5C50;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+
+        ul li {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 32px;
+            color: #4A5C50;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Viñeta de hoja abstracta hecha con CSS (Moderno) */
+        ul li::before {
+            content: ""; 
+            position: absolute;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            background-color: var(--accent-color);
+            border-radius: 50% 50% 50% 0; /* Forma de hoja */
+            transform: rotate(-45deg);
+            opacity: 0.9;
+        }
+
+        /* Botón */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 16px 44px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border-radius: 100px; /* Estilo píldora moderna */
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animación fluida premium */
+            letter-spacing: 0.02em;
+            box-shadow: 0 8px 24px rgba(163, 184, 153, 0.25); /* Sombra moderna sutil */
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(163, 184, 153, 0.4);
+        }
+
+        .hero-links {
+            margin-top: 40px;
+        }
+
+        /* Secciones */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--bg-color);
+        }
+
+        .about {
+            background-color: var(--section-bg);
+            border-radius: 40px; /* Tarjeta flotante moderna */
+            margin: 0 20px; 
+        }
+
+        .now {
+            background-color: var(--bg-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #E2DBD0;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-family: var(--font-headings);
+            font-style: italic;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        /* Subrayado animado moderno para los links del footer */
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-hover);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .social-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .footer-text {
+            font-size: 0.95rem;
+            color: #6C7A70;
+        }
+        
+        /* Media Queries para Mobile */
+        @media (max-width: 600px) {
+            .about {
+                margin: 0;
+                border-radius: 30px 30px 0 0; /* Pierde márgenes en celular para pantalla completa */
+            }
+            section {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>María Guadalupe</h1>
+            <div class="hero-links">
+                <a href="https://instagram.com/otracosa" class="btn" target="_blank" rel="noopener noreferrer">Agendar cita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <ul>
+                <li>Soy profesora de yoga.</li>
+                <li>He viajado por todo el mundo.</li>
+                <li>Soy entrenadora.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Now Section -->
+    <section class="now" id="now">
+        <div class="container">
+            <h2>Now</h2>
+            <ul>
+                <li>Entrenamiento personalizado.</li>
+                <li>Buscando nuevos clientes.</li>
+                <li>Estudiando maestría en tal.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/algo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://instagram.com/otracosa" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <p class="footer-text">© 2026 María Guadalupe. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
